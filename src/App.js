@@ -110,7 +110,6 @@ function App() {
         {
           wantedArticles.map((item, index) => {
             const { title, description, pageId } = item
-            console.log(item);
             return (
               <div className='added-articles' key={index}>
                 <span>{title}</span>

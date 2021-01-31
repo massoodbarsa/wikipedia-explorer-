@@ -48,7 +48,6 @@ export default function Home({ list, getArticle, wikiList }) {
                                 margin="normal"
                                 variant="outlined"
                                 InputProps={{ ...params.InputProps, type: 'search' }}
-                                value={value.title}
                             />
                         )}
                     />
