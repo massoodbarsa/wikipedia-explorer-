@@ -1,0 +1,33 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem;
+    padding: 10px;
+
+    &__search {
+        width: 30%;
+    }
+
+    &__form {
+        width: 70%;
+        padding: 15px;
+
+        .form-button {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .MuiTextField-root {
+            width: 70%;
+        }
+    }
+
+    &__input {
+        padding: 1rem;
+        margin-top: 3px;
+        width: 70%;
+        font-size: medium;
+        border-radius: 5px;
+    }
+}

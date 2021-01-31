@@ -1,0 +1,80 @@
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid brown;
+  margin-bottom: 20px;
+
+  .title {
+    font-weight: bold;
+    border-bottom: 1px solid green;
+  }
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+
+  &__description {
+    width: 60%;
+  }
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+
+  .submit-btn {
+    height: 40px;
+    margin: 15px;
+
+    width: 200px;
+    background-color: rgb(15, 17, 16);
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: .8px;
+  }
+
+  p {
+    border-radius: 5px;
+    padding: .5rem;
+    border: 1px solid rgb(65, 27, 27);
+  }
+}
+
+.articles-container {
+  margin-bottom: 100px;
+  border-top: 1px solid rgb(65, 27, 27);
+
+
+  .added-articles {
+    display: flex;
+    flex-direction: row;
+
+    span {
+      padding: 1rem;
+      border: 1px solid rgb(87, 80, 80);
+      margin: .5rem;
+      width: 40%;
+      border-radius: 5px;
+
+    }
+
+    .delete-btn {
+      height: 40px;
+      margin-top: 15px;
+      width: 200px;
+      background-color: rgb(28, 46, 145);
+      border: none;
+      border-radius: 5px;
+      color: aqua;
+    }
+  }
+}

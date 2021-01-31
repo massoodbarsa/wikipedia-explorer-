@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    // margin-left: 10rem;
+
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    &__label {
+        font-weight: 700;
+        color: aliceblue;
+        background-color: cyan;
+        padding: 1rem;
+        text-align: center;
+
+    }
+
+}
