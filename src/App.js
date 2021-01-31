@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import './App.scss';
 import Home from './components/Home';
 import Header from './components/Header'
@@ -49,12 +49,9 @@ function App() {
 
   }
 
-
-
   const getArticle = async (item) => {
     setWantedArticles(prev => [...prev, item])
   }
-
 
   const handleSubmit = async () => {
     const array = []
@@ -86,10 +83,11 @@ function App() {
 
         array.push(newList)
         setWikiList(array)
+        setLoading(false)
+
         console.log(wikiList);
 
       } catch (error) {
-        setLoading(false)
         console.log(error)
       }
     }
@@ -110,10 +108,11 @@ function App() {
       <div className='articles-container'>
 
         {
-          wantedArticles.map(item => {
+          wantedArticles.map((item, index) => {
             const { title, description, pageId } = item
+            console.log(item);
             return (
-              <div className='added-articles' key={pageId}>
+              <div className='added-articles' key={index}>
                 <span>{title}</span>
                 <span>{description}</span>
                 <button className='delete-btn' onClick={() => handleDelete(pageId)}>
@@ -140,17 +139,25 @@ function App() {
 
       />
 
-      {wikiList.map(item => {
+      {wikiList.map((item, index) => {
         const { title, description, fullUrl } = item
+
+        if (loading) {
+
+          return (
+            <div className='result'>
+              <CircularProgress color='secondary' />
+            </div>
+          )
+        }
         return (
-          <div className='result-container' key={title}>
+          <div className='result-container' key={index}>
             <div className='title'>
               <p >{title}</p>
             </div>
             <div className="result">
-              {description && <p className="result__description" dangerouslySetInnerHTML={{ __html: description.slice(0, 300) }}></p>
-              }
-              <span ><a href={fullUrl}>{fullUrl}</a></span>
+              {description && <p className="result__description" dangerouslySetInnerHTML={{ __html: description.slice(0, 300) }}></p>}
+              <span ><a href={fullUrl} target="_blank">{fullUrl}</a></span>
             </div>
           </div>
         )

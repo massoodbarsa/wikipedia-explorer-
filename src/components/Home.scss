@@ -1,3 +1,5 @@
+@import '../App.scss';
+
 .home {
     display: flex;
     flex-direction: row;
@@ -29,5 +31,17 @@
         width: 70%;
         font-size: medium;
         border-radius: 5px;
+    }
+
+    .submit-btn {
+        height: 40px;
+        margin: 15px;
+        width: 200px;
+        background-color: rgb(15, 17, 16);
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        font-weight: 800;
+        letter-spacing: .8px;
     }
 }

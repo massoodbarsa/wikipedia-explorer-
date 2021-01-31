@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useState } from 'react'
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 
@@ -8,17 +8,23 @@ import './Home.scss'
 export default function Home({ list, getArticle, wikiList }) {
 
     const [description, setDescription] = useState('')
+    const [value, setValue] = useState({})
 
-    const addArticle = (value) => {
+
+    const addArticle = () => {
         const { pageid, title } = value
 
-        if (description) {
+        console.log(pageid, title);
+
+        if (description&&title) {
             getArticle({
                 title,
                 description,
                 pageId: pageid
             })
         }
+        setDescription('')
+        setValue({})
     }
 
     return (
@@ -32,8 +38,9 @@ export default function Home({ list, getArticle, wikiList }) {
                         disableClearable
                         options={list}
                         getOptionLabel={(option) => option.title}
+                        closeText='close'
 
-                        onChange={(event, value) => addArticle(value)}
+                        onChange={(event, value) => setValue(value)}
                         renderInput={(params) => (
                             <TextField
                                 {...params}
@@ -41,13 +48,15 @@ export default function Home({ list, getArticle, wikiList }) {
                                 margin="normal"
                                 variant="outlined"
                                 InputProps={{ ...params.InputProps, type: 'search' }}
+                                value={value.title}
                             />
                         )}
                     />
+                    <button onClick={() => addArticle()} className='submit-btn'>Add</button>
                 </section>
                 <section className='home__form'>
                     <form  >
-                        <input type="text" onChange={(e) => setDescription(e.target.value)} className='home__input' />
+                        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} className='home__input' />
                     </form>
                 </section>
             </div>
