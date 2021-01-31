@@ -42,10 +42,16 @@
     letter-spacing: .8px;
   }
 
-  p {
+  .count-zero {
     border-radius: 5px;
     padding: .5rem;
     border: 1px solid rgb(65, 27, 27);
+  }
+  .count-not-zero {
+    border-radius: 5px;
+    padding: .5rem;
+    border: 1px solid rgb(65, 27, 27);
+    background-color: rgb(246, 150, 7);
   }
 }
 

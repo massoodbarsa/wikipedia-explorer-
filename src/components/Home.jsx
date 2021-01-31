@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-
 import './Home.scss'
 
 
@@ -13,8 +12,6 @@ export default function Home({ list, getArticle, wikiList }) {
 
     const addArticle = () => {
         const { pageid, title } = value
-
-        console.log(pageid, title);
 
         if (description&&title) {
             getArticle({
@@ -38,7 +35,7 @@ export default function Home({ list, getArticle, wikiList }) {
                         disableClearable
                         options={list}
                         getOptionLabel={(option) => option.title}
-                        closeText='close'
+                        
 
                         onChange={(event, value) => setValue(value)}
                         renderInput={(params) => (

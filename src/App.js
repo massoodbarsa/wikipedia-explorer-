@@ -125,7 +125,7 @@ function App() {
       </div>
       <Home list={list} getArticle={getArticle} wikiList={wikiList} />
       <div className='count'>
-        <p >
+        <p className={!wantedArticles.length?'count-zero':'count-not-zero'}>
           {wantedArticles.length} Items
         </p>
         <button className='submit-btn' onClick={handleSubmit}>Submit</button>
