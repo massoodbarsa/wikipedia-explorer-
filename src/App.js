@@ -85,8 +85,6 @@ function App() {
         setWikiList(array)
         setLoading(false)
 
-        console.log(wikiList);
-
       } catch (error) {
         console.log(error)
       }
@@ -144,7 +142,7 @@ function App() {
         if (loading) {
 
           return (
-            <div className='result'>
+            <div className='result'  key={index}>
               <CircularProgress color='secondary' />
             </div>
           )
