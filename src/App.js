@@ -154,7 +154,7 @@ function App() {
             </div>
             <div className="result">
               {description && <p className="result__description" dangerouslySetInnerHTML={{ __html: description.slice(0, 300) }}></p>}
-              <span ><a href={fullUrl} target="_blank">{fullUrl}</a></span>
+              <span ><a href={fullUrl} >{fullUrl}</a></span>
             </div>
           </div>
         )
